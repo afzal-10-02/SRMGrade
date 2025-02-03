@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SRMGrade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    {% include 'partials/header.html' %}
+
+    <div class="container mt-4">
+        <!-- Title Section with Button -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-3">BCA Previous Year Questions</h2>
+            <a href="/add-pyq"><button class="btn btn-primary">+ Add Notes</button></a>
+        </div>
+
+        <!-- Sidebar and PYQ Container -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">C Programming </a>
+                    <a href="#" class="list-group-item list-group-item-action">C++ Programming</a>
+                    <a href="#" class="list-group-item list-group-item-action">English I</a>
+                    <a href="#" class="list-group-item list-group-item-action">English II</a>
+                    <a href="#" class="list-group-item list-group-item-action">Mathematics I</a>
+                    <a href="#" class="list-group-item list-group-item-action">Mathematics II</a>
+                    <a href="#" class="list-group-item list-group-item-action">Fundamental of Computer</a>
+                    <a href="#" class="list-group-item list-group-item-action">DSA</a>
+                    <a href="#" class="list-group-item list-group-item-action">DBMS</a>
+                    <a href="#" class="list-group-item list-group-item-action">PHP</a>
+                    <a href="#" class="list-group-item list-group-item-action">Digital Logic</a>
+                </div>
+            </div>
+
+            <!-- PYQs Grid -->
+            <div class="col-md-9">
+                <div class="row">
+                    {% for pyq in pyqs %}
+                    <div class="col-md-6">
+                        <div class="card pyq-card border-dark mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ pyq.year }}</h5>
+                                <p class="badge bg-secondary">{{ pyq.type }}</p>
+                                <p><b>By: </b> <span>{{ pyq.teacher }}</span></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="btn btn-sm btn-primary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+</body>
+</html>

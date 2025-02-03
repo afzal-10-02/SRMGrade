@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRMGrade</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+</head>
+
+<body>
+  <div class="main-box">
+    {% include 'partials/header.html' %}
+
+    <section>
+      <div class="hero-section">
+        <div class="box box1">
+          <h1>SrmGrade</h1>
+          <p>
+            Elevate your Academic journey with our website!
+
+            Find notes, previous year question papers, and essential tools to excel academically.
+          </p>
+          <div class="boxs">
+            <a href="/notes">
+              <div class="notes-box box">
+                <i class="fa-solid fa-pen"></i>
+                <h2>Notes</h2>
+              </div>
+              </a>
+  
+            <a href="/pyq">
+              <div class="pyq-box box">
+                <i class="fa-solid fa-file-lines"></i>
+                <h2>PYQ</h2>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="box box2">
+          <div class="img-box">
+            <img src="{{url_for('static' , filename= 'images/hero-section.png')}}" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+  </div>
+
+</body>
+</html>

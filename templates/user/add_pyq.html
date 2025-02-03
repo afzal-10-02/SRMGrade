@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMGrade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+</head>
+<body>
+    {% include 'partials/header.html'   %}
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <form action="/upload_pyq" class="border p-4 rounded shadow bg-white" method="POST" enctype="multipart/form-data">
+            <div class="text-center mb-4">
+                <h2 class="text-dark">Upload Question</h2>
+            </div>
+    
+            <div class="mb-3">
+                <label for="subject_id" class="form-label">Subject ID :</label>
+                <input type="text" class="form-control p-2" name="subject_id" id="subject_id" placeholder="Enter subject ID" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="year" class="form-label">Year :</label>
+                <input type="text" class="form-control p-2" name="year" id="year" placeholder="Enter the year of the exam (e.g., 2022)" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="exam_type" class="form-label">Type of Exam :</label>
+                <select class="form-control p-2" name="exam_type" id="exam_type" required>
+                    <option value=""> -- Exam Type -- </option>
+                    <option value="Cycle Test I">Cycle Test I</option>
+                    <option value="Cycle Test II">Cycle Test II</option>
+                    <option value="Model Test">Model Test</option>
+                    <option value="University Test">University Test</option>
+                </select>
+            </div>
+    
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload PYQ (PDF, Word, etc.) :</label>
+                <input type="file" class="form-control p-2" name="file" id="file" accept=".pdf,.doc,.docx,.txt" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="teachername" class="form-label">Teacher Name : </label>
+                <input class="form-control p-2" name="teachername" id="teachername" required>
+            </div>
+    
+            {% if alert %}
+                <small class="text-danger">{{ alert }}</small>
+            {% endif %}
+            
+            <button type="submit" class="btn btn-primary w-100">Upload Question Paper</button>
+        </form>
+    </div>
+    
+    
+    {% include 'partials/footer.html'   %}
+</body>
+</html>

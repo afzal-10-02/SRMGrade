@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}" />
+<header>
+    <nav>
+      <div class="logo">
+        <h1>SrmGrade</h1>
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li><a href="/pyq">PYQ</a></li>
+      </ul>
+
+      {% if current_user.is_authenticated %}
+      <div>
+        hello,<b>{{current_user.fullname}}</b>
+        <a href="/logout"> <button class= "btn btn-outline-light px-4 py-2 rounded-pill">Logout</button></a>
+      </div>
+      {% else %}
+      <div>
+        <a href="/login"> <button >Log In</button></a>
+        <a href="/signup"> <button >Sign In</button></a>
+      </div>
+      {% endif %}
+
+    </nav>
+</header>

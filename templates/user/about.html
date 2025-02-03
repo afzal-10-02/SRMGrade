@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SRMGrade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<style>
+
+.team-card {
+    padding: 15px;
+    text-align: center; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: black;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #007bff;  /* Change color on hover */
+}
+</style>
+<body>
+    {% include 'partials/header.html' %}
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">About Us</h2>
+
+        <!-- Hero Section -->
+        <div class="text-center mb-4">
+            <p class="lead">
+                Welcome to <strong>SRM Portal</strong>, your one-stop destination for Notes and PYQs.  
+                Our goal is to <Strong>simplify learning</Strong> by providing <strong>quality educational resources</strong>.
+            </p>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card about-card border-dark p-3">
+                    <i class="bi bi-lightbulb-fill text-primary" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Our Mission</h5>
+                    <p>To provide easy access to high-quality academic resources and enhance learning experiences.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card about-card border-dark p-3">
+                    <i class="bi bi-book-fill text-success" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Our Resources</h5>
+                    <p>We offer organized <strong> Notes, PYQs, and Study Materials</strong> for multiple subjects and semesters.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card about-card border-dark p-3">
+                    <i class="bi bi-people-fill text-warning" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Our Team</h5>
+                    <p>Our team consists of <strong> experienced educators and passionate students</strong> who curate the best content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <h3 class="text-center mt-5 mb-3">Meet Our Team</h3>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="team-card  ">
+                    <img src="{{ url_for('static', filename='images/About Pics/afzal.jpg') }}" alt="Team Member" class="team-img">
+                    <h5>Afzal Jamal</h5>
+                    <p>Frontend & Backend</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/afzal_jamal_1002" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/afzal-jamal-457a86266" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/afzal-10-02" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card border-dark">
+                    <img src="{{ url_for('static', filename='images/about Pics/manish.jpg') }}" alt="Team Member" class="team-img">
+                    <h5>Manish kashyap</h5>
+                    <p>Frontend</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/kashy.ap1407" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/manish-Kashyap-050a19317" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-card">
+                    <img src="{{ url_for('static', filename='images/About Pics/Sameer.jpg') }}" alt="Sameer Basnet" class="team-img">
+                    <h5>Sameer Basnet</h5>
+                    <p>Research & design</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/_sam.basnet" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sameer-basnet-21498931b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Sameer-Basnet-web" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-center mt-5 mb-3">Our Guide</h3>
+        <div class="row text-center d-flex justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="team-card">
+                    <img src="{{ url_for('static', filename='images/About Pics/priyadarshini.jpg') }}" alt="Guide" class="team-img">
+                    <h5>Asst. Prof. Priyadarshini Pradhan</h5>
+                    <p>Guide & Mentor</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/pradhanpriyadarshinii" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyadarshini-pradhan-50600913b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="text-center mt-5">
+            <h3>Get in Touch</h3>
+            <p>Have questions? Contact us at <a href="mailto:afzalj_jamal@srmus.edu.in">afzalj_jamal@srmus.edu.in</a></p>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

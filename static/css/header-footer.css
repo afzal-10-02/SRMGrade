@@ -1,0 +1,43 @@
+header nav {
+    height: 60px;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02497b;
+    color: white;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: white;
+    border: solid 1px transparent;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    border: solid 1px white;
+    color: white;
+    border-radius: 5px;
+}
+
+header nav button {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+header nav button:hover {
+    background-color: white;
+    color: #02497b;
+} 

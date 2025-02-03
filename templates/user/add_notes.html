@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMGrade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+</head>
+<body>
+    {% include 'partials/header.html'   %}
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <form action="/upload_notes" class="border p-4 rounded shadow bg-white" method="POST" enctype="multipart/form-data">
+            <div class="text-center mb-4">
+                <h2 class="text-dark">Submit Your Notes</h2>
+            </div>
+
+            <div class="mb-3">
+                <label for="subject_id" class="form-label">Subject ID :</label>
+                <input type="text" class="form-control p-2" name="subject_id" id="subject_id" placeholder="Enter subject ID" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="unit_range" class="form-label">Unit :</label>
+                <input type="text" class="form-control p-2" name="unit_range" id="unit_range" placeholder="Enter unit range (e.g., 1-5)" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload Notes (PDF, Word, etc.) :</label>
+                <input type="file" class="form-control p-2" name="file" id="file" accept=".pdf,.doc,.docx,.txt" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content (Optional) :</label>
+                <textarea class="form-control p-2" name="content" id="content" rows="3" placeholder="Enter a brief content description of the notes (optional)"></textarea>
+            </div>
+
+            {% if alert %}
+                <small class="text-danger">{{ alert }}</small>
+            {% endif %}
+            
+            <button type="submit" class="btn btn-primary w-100">Upload Notes</button>
+        </form>
+    </div>
+    
+    {% include 'partials/footer.html'   %}
+</body>
+</html>
