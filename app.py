@@ -3,6 +3,7 @@ from flask_login import LoginManager
 from models.model import db, User
 from datetime import timedelta
 from flask_session import Session
+import os 
 
 app = None
 login_manager = LoginManager()
@@ -11,7 +12,7 @@ def create_app():
   app = Flask(__name__, template_folder="templates")
   
 
-  app.config['SECRET_KEY'] = 'jkn8u9enfviuewhhnv8472489bfe49yh43JGe9j93GJR'
+  app.config['SECRET_KEY'] = os.urandom(24)
   app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///SRMGrade.db'
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
