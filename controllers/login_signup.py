@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template , request, redirect, url_for
+from flask import render_template , request, redirect, url_for, session
 from flask_login import login_required, logout_user, current_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models.model import db,User
@@ -63,4 +62,5 @@ def signup():
 @login_required
 def logout():
     logout_user()
+    session.clear()
     return redirect(url_for('index'))
